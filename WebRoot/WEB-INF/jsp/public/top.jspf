@@ -1,0 +1,46 @@
+﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 工具条开始 -->
+<h1 class="page-header">
+	<span>OA </span><small>主页面</small>
+</h1>
+<div class="navbar">
+	<div class="navbar-inner">
+		<a href="#" class="btn btn-navbar" data-toggle="collapse"
+			data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+			class="icon-bar"></span> <span class="icon-bar"></span> </a> <a
+			class="brand" href="#">OA</a>
+		<div class="nav-collapse">
+			<ul class="nav">
+				<li class="active"><a href="home_index.action">首页</a></li>
+
+				<%-- 显示一级菜单 --%>
+				<s:iterator value="#application.topPrivilegeList">
+					<s:if test="#session.user.hasPrivilegeByName(name)">
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#">${name}<span class="caret"></span>
+						</a>
+							<ul class="dropdown-menu">
+								<%-- 显示二级菜单 --%>
+								<s:iterator value="children">
+									<s:if test="#session.user.hasPrivilegeByName(name)">
+										<li><a
+											href="${pageContext.request.contextPath}${url}.action">${name}</a>
+										</li>
+									</s:if>
+								</s:iterator>
+							</ul>
+						</li>
+					</s:if>
+				</s:iterator>
+
+			</ul>
+			<ul class="nav pull-right">
+				<li><label>欢迎您，${user.loginName }【${user.name}】</label></li>
+				<li class="divider-vertical"></li>
+				<li><label><s:a action="user_logout">注销</s:a> </label>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- 工具条结束-->
