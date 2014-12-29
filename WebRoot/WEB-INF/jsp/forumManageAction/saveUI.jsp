@@ -27,8 +27,8 @@
 				</tr>
 			</table>
 			<!-- 表单操作 -->
-			<input type="submit" value="保存" />
-			<a href="javascript:history.go(-1);">返回 </a>
+			<input type="submit" value="保存" class="btn btn-primary btn-lg"/>
+			<a href="javascript:history.go(-1);" class="btn btn-info btn-lg">返回 </a>
 		</s:form>
 	</div>
 </body>

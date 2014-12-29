@@ -3,8 +3,6 @@
 <head>
 <title>帖子回复</title>
 <%@ include file="/WEB-INF/jsp/public/commons.jspf"%>
-<link type="text/css" rel="stylesheet"
-	href="${pageContext.request.contextPath}/style/blue/forum.css" />
 <script language="javascript"
 	src="${pageContext.request.contextPath}/fckeditor/fckeditor.js"
 	charset="utf-8"></script>
@@ -23,54 +21,64 @@
 </head>
 <body>
 	<!--显示表单内容-->
-	<div class="container">
+	<div class="container" style="overflow:auto;overflow-x: hidden">
 		<%@ include file="/WEB-INF/jsp/public/top.jspf"%>
 
 		<s:form action="reply_add" cssStyle="margin: 0; padding: 0;">
 			<s:hidden name="topicId"></s:hidden>
 
 			<div id="PageHead"></div>
-			<center>
-				<div>
-					<div width=85% style="float:left">
-						<font> &gt; </font>
-						<s:a action="forum_list">论坛</s:a>
-						<font> &gt; </font>
-						<s:a action="forum_show?id=%{#topic.forum.id}">${topic.forum.name}</s:a>
-						<font> &gt;&gt; </font> 帖子回复
-					</div>
+
+			<div>
+				<div width=85% style="float:left">
+					<font> &gt; </font>
+					<s:a action="forum_list">论坛</s:a>
+					<font> &gt; </font>
+					<s:a action="forum_show?id=%{#topic.forum.id}">${topic.forum.name}</s:a>
+					<font> &gt;&gt; </font> 帖子回复
 				</div>
-				<div>
-					<table border="0" cellspacing="1" cellpadding="1" width="100%"
-						id="InputArea">
-						<tr>
-							<td height="30" width="80px"><div>帖子主题</div>
-							</td>
-							<td><div>${topic.title}</div></td>
-						</tr>
-						<tr>
-							<td height="30"><div class="InputTitle">标题</div></td>
-							<td><div>
-									<s:textfield name="title" cssStyle="width:100%"
-										value="回复：%{#topic.title}" />
-								</div></td>
-						</tr>
-						<tr height="240">
-							<td><div>内容</div>
-							</td>
-							<td>
-								<div>
-									<s:textarea name="content" cssStyle="width:650px;height:200px;"></s:textarea>
-								</div></td>
-						</tr>
-						<tr height="30">
-							<td colspan="2" align="center">
-								<!-- 表单操作 --> <input type="submit" value="提交" /> <a
-								href="javascript:history.go(-1);">返回 </a></td>
-						</tr>
-					</table>
-				</div>
-			</center>
+			</div>
+			<div>
+				<table border="0" cellspacing="0" cellpadding="0" width="100%"
+					id="InputArea">
+					<tr>
+						<td height="30" width="80px"><div>帖子主题</div></td>
+						<td><div>${topic.title}</div>
+						</td>
+					</tr>
+					<tr>
+						<td><label class="control-label"><font size="5px">标题:</font>
+						</label>
+						</td>
+						<td><div>
+								<s:textfield name="title" cssStyle="width:100%;height:30px"
+									size="30" placeholder="标题" value="回复：%{#topic.title}" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><label class="control-label"><font size="5px">内容:</font>
+						</label></td>
+						<td>
+							<div>
+								<s:textarea name="content" cssStyle="width:650px;height:200px"
+									placeholder="内容"></s:textarea>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<div align="center">
+								<!-- 表单操作 -->
+								<input type="submit" value="提交" class="btn btn-primary btn-lg" />
+								<a href="javascript:history.go(-1);"
+									class="btn btn-warning btn-lg">返回 </a>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+
 		</s:form>
 	</div>
 </body>

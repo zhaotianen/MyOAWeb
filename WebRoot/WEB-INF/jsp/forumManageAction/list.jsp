@@ -47,7 +47,7 @@
 		</table>
 
 		<!-- 其他功能超链接 -->
-		<s:a action="forumManage_addUI">
+		<s:a action="forumManage_addUI" cssClass="btn btn-primary btn-lg">
 					新建
 				</s:a>
 

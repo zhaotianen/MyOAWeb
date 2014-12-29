@@ -23,7 +23,7 @@
 
 
 	<!--显示表单内容-->
-	<div class="container">
+	<div class="container" style="overflow:auto;overflow-x: hidden">
 		<%@ include file="/WEB-INF/jsp/public/top.jspf"%>
 
 
@@ -61,11 +61,17 @@
 						</td>
 
 					</tr>
-
+					<tr>
+						<td colspan="2">
+							<div align="center">
+								<!-- 表单操作 -->
+								<input type="submit" value="保存" class="btn btn-primary btn-lg" />
+								<a href="javascript:history.go(-1);"
+									class="btn btn-warning btn-lg">返回 </a>
+							</div></td>
+					</tr>
 				</table>
-				<!-- 表单操作 -->
-				<input type="submit" value="保存" /> <a
-					href="javascript:history.go(-1);">返回 </a>
+
 			</div>
 
 		</s:form>

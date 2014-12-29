@@ -32,7 +32,8 @@
 						<td>${department.name}&nbsp;</td>
 						<td><s:iterator value="roles">
                 		${name}
-                	</s:iterator></td>
+                	</s:iterator>
+						</td>
 						<td>${description}&nbsp;</td>
 						<td><s:a action="user_delete?id=%{id}"
 								onclick="return delConfirm()">删除</s:a> <s:a
@@ -47,7 +48,7 @@
 		</table>
 
 		<!-- 其他功能超链接 -->
-		<s:a action="user_addUI">
+		<s:a action="user_addUI" cssClass="btn btn-primary btn-lg">
 					增加
 				</s:a>
 		<div align="right">

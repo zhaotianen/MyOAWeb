@@ -19,7 +19,7 @@
 <body>
 
 	<!--显示表单内容-->
-	<div class="container">
+	<div class="container" style="overflow:auto;overflow-x: hidden">
 		<%@ include file="/WEB-INF/jsp/public/top.jspf"%>
 		<div id="PageHead"></div>
 
@@ -43,12 +43,9 @@
 					<td width="3" class="ForumPageTableTitleLeft">&nbsp;</td>
 					<td><b>本帖主题：${topic.title}</b></td>
 					<td align="right" style="padding-right:12px;"><s:a
-							action="reply_addUI?topicId=%{#topic.id}">
+							action="reply_addUI?topicId=%{#topic.id}" cssClass="btn btn-info">
 							&nbsp;回复&nbsp;
-						</s:a> <a href="moveUI.html">&nbsp;移动到其他版块&nbsp;</a> <a href="#"
-						onClick="return confirm('要把本主题设为精华吗？')">&nbsp;精华&nbsp;</a> <a
-						href="#" onClick="return confirm('要把本主题设为置顶吗？')">&nbsp;置顶&nbsp;</a>
-						<a href="#" onClick="return confirm('要把本主题设为普通吗？')">&nbsp;普通&nbsp;</a>
+						</s:a>
 					</td>
 					<td width="3">&nbsp;</td>
 				</tr>
@@ -68,20 +65,12 @@
 								</div> <!--作者名称-->
 								<div>${topic.author.name}</div>
 							</td>
-							<td align="right">
-								<ul>
-									<!--操作列表-->
-									<li><a
-										href="${pageContext.request.contextPath}/BBS_Topic/saveUI.html">编辑</a>
-										<a href="#" onClick="return confirm('确定要删除本帖吗？')">删除</a></li>
-									<!-- 文章的标题 -->
-									<li>${topic.title}</li>
-								</ul>
-							</td>
+							<td align="left">
+								<!-- 文章的标题 --> ${topic.title}</td>
 						</tr>
 						<tr>
 							<!-- 文章内容 -->
-							<td valign="top" align="center">
+							<td align="left">
 								<div>${topic.content}</div>
 							</td>
 						</tr>
@@ -92,9 +81,7 @@
 									<li style="float: left; line-height:18px;"><font
 										color=#C30000>[楼主]</font> ${topic.postTime}</li>
 									<li style="float: right;"><a href="javascript:scroll(0,0)">
-											<img border="0"
-											src="${pageContext.request.contextPath}/style/images/top.gif" />
-									</a>
+											▲ </a>
 									</li>
 								</ul>
 							</td>
@@ -119,25 +106,22 @@
 								</div> <!--作者名称-->
 								<div>${author.name}</div>
 							</td>
-							<td align="center">
-								<ul class="TopicFunc">
-									<!--操作列表-->
-									<li><a
-										href="${pageContext.request.contextPath}/BBS_Topic/saveUI.html"><img
-											border="0"
-											src="${pageContext.request.contextPath}/style/images/edit.gif" />编辑</a>
-										<a href="#" onClick="return confirm('确定要删除本帖吗？')"><img
-											border="0"
-											src="${pageContext.request.contextPath}/style/images/delete.gif" />删除</a>
-									</li>
-									<!-- 文章表情与标题 -->
-									<li>${title}</li>
-								</ul>
+							<td align="right"><a
+								href="${pageContext.request.contextPath}/BBS_Topic/saveUI.html"><img
+									border="0"
+									src="${pageContext.request.contextPath}/style/images/edit.gif" />编辑</a>
+								<a href="#" onClick="return confirm('确定要删除本帖吗？')"><img
+									border="0"
+									src="${pageContext.request.contextPath}/style/images/delete.gif" />删除</a>
 							</td>
 						</tr>
 						<tr>
 							<!-- 文章内容 -->
-							<td valign="top" align="center">
+							<td valign="top" align="left">
+								<div>
+									<!-- 文章表情与标题 -->
+									${title}
+								</div>
 								<div>${content}</div>
 							</td>
 						</tr>
@@ -149,9 +133,7 @@
 										color=#C30000>[${(currentPage - 1) * pageSize +
 											status.count}楼]</font> ${postTime}</li>
 									<li style="float: right;"><a href="javascript:scroll(0,0)">
-											<img border="0"
-											src="${pageContext.request.contextPath}/style/images/top.gif" />
-									</a>
+											▲ </a>
 									</li>
 								</ul>
 							</td>
@@ -162,50 +144,51 @@
 			<!-- ~~~~~~~~~~~~~~~ 显示回复列表结束 ~~~~~~~~~~~~~~~ -->
 		</div>
 
-
-		<!--分页信息-->
-		<%@ include file="/WEB-INF/jsp/public/pageView.jspf"%>
-		<s:form action="topic_show?id=%{id}"></s:form>
-
-
-		<div style="margin-top: 25px;">
-		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-			<tr valign="bottom">
-				<td width="3" class="ForumPageTableTitleLeft">&nbsp;</td>
-				<td><b>快速回复</b></td>
-				<td width="3">&nbsp;</td>
-			</tr>
-			<tr height="1">
-				<td colspan="3"></td>
-			</tr>
-		</table>
-	</div>
+		<div align="right">
+			<!--分页信息-->
+			<%@ include file="/WEB-INF/jsp/public/pageView.jspf"%>
+			<s:form action="topic_show?id=%{id}"></s:form>
+		</div>
 
 
-	<!--快速回复-->
 
-	<form action="">
-		<div style="padding-left: 3px;">                                                                                                                                                                                                                                                                                                                            
-			<table border="0" cellspacing="1" width="98%" cellpadding="5">
-				<tr height="30">
-					<td width="50px"><b>标题</b></td>
-					<td><input type="text" name="title" value="回复：昨天发现在表单里删除的图片"
-						style="width:90%" />
-					</td>
+
+		<!--快速回复-->
+
+		<!--<div style="margin-top: 25px;" align="right">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr valign="bottom">
+					<td width="3" class="ForumPageTableTitleLeft">&nbsp;</td>
+					<td><b>快速回复</b></td>
+					<td width="3">&nbsp;</td>
 				</tr>
-				<tr height="200">
-					<td valign="top" rowspan="2"><b>内容</b></td>
-					<td valign="top"><textarea name="content"
-							style="width: 95%; height: 300px"></textarea>
-					</td>
-				</tr>
-				<tr height="30">
-					<td colspan="2" align="center"><input type="submit" value="提交" class="btn btn-primary btn-lg"/>
-					</td>
+				<tr height="1">
+					<td colspan="3"></td>
 				</tr>
 			</table>
-		</div>
-	</form>
+		</div> 
+		<form action="">
+			<div style="padding-left: 3px;">
+				<table border="0" cellspacing="1" width="98%" cellpadding="5">
+					<tr height="30">
+						<td width="50px"><b>标题</b>
+						</td>
+						<td><input type="text" name="title" value="回复：昨天发现在表单里删除的图片"
+							style="width:90%" /></td>
+					</tr>
+					<tr height="200">
+						<td valign="top" rowspan="2"><b>内容</b>
+						</td>
+						<td valign="top"><textarea name="content"
+								style="width: 95%; height: 300px"></textarea></td>
+					</tr>
+					<tr height="30">
+						<td colspan="2" align="center"><input type="submit"
+							value="提交" class="btn btn-primary btn-lg" /></td>
+					</tr>
+				</table>
+			</div>
+		</form>-->
 
 	</div>
 

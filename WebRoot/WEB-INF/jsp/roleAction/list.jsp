@@ -34,7 +34,7 @@
 			</tbody>
 
 		</table>
-		<s:a action="role_addUI">增加</s:a>
+		<s:a action="role_addUI" cssClass="btn btn-primary btn-lg">增加</s:a>
 	</div>
 
 </body>
