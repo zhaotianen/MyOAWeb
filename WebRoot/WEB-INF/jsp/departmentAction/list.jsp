@@ -42,10 +42,10 @@
 		<!-- 其他功能超链接 -->
 
 		<div>
-			<s:a action="department_addUI?parentId=%{parentId}" class="btn btn-primary btn-lg">
+			<s:a action="department_addUI?parentId=%{parentId}" cssClass="btn btn-primary btn-lg">
 					新建
 				</s:a>
-			<s:a action="department_list?parentId=%{#parent.parent.id}" class="btn btn-info btn-lg">
+			<s:a action="department_list?parentId=%{#parent.parent.id}" cssClass="btn btn-info btn-lg">
 					返回到上一级
 				</s:a>
 		</div>
