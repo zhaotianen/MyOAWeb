@@ -1,6 +1,5 @@
 package cn.zhaotianen.oa.view.action;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.annotation.Scope;
@@ -8,7 +7,6 @@ import org.springframework.stereotype.Controller;
 
 import cn.zhaotianen.oa.base.BaseAction;
 import cn.zhaotianen.oa.domain.Forum;
-import cn.zhaotianen.oa.domain.PageBean;
 import cn.zhaotianen.oa.domain.Topic;
 import cn.zhaotianen.oa.util.QueryHelper;
 

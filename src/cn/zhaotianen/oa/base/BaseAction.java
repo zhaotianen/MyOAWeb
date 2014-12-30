@@ -17,7 +17,8 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-public abstract class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
+public abstract class BaseAction<T> extends ActionSupport implements
+		ModelDriven<T> {
 
 	// =============== ModelDriven的支持 ==================
 
@@ -26,7 +27,8 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
 	public BaseAction() {
 		try {
 			// 通过反射获取model的真实类型
-			ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
+			ParameterizedType pt = (ParameterizedType) this.getClass()
+					.getGenericSuperclass();
 			Class<T> clazz = (Class<T>) pt.getActualTypeArguments()[0];
 			// 通过反射创建model的实例
 			model = clazz.newInstance();
@@ -55,7 +57,7 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
 	protected TopicService topicService;
 	@Resource
 	protected ReplyService replyService;
-
+	
 	/**
 	 * 获取当前登录的用户
 	 * 
