@@ -1,5 +1,7 @@
 package cn.zhaotianen.oa.service.impl;
 
+import java.util.List;
+
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,7 +12,8 @@ import cn.zhaotianen.oa.service.UserService;
 
 @Service
 @Transactional
-public class UserServiceImpl extends DaoSupportImpl<User> implements UserService {
+public class UserServiceImpl extends DaoSupportImpl<User> implements
+		UserService {
 
 	public User findByLoginNameAndPassword(String loginName, String password) {
 		// 使用密码的MD5摘要进行对比
@@ -20,6 +23,14 @@ public class UserServiceImpl extends DaoSupportImpl<User> implements UserService
 				.setParameter(0, loginName)//
 				.setParameter(1, md5Digest)//
 				.uniqueResult();
+	}
+
+	public List<User> contactList() {
+
+		return getSession()
+				.createQuery(
+						"from User u order by u.department.id")
+				.list();
 	}
 
 }

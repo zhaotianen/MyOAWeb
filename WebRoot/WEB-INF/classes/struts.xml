@@ -104,11 +104,32 @@
 			</result>
 		</action>
 
-		<!-- 审批流转：审批流程管理 -->
-		<action name="processDefinition_*" class="" method="{1}">
+		<!-- 通讯录 -->
+		<action name="contact_*" class="contactAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/contactAction/list.jsp</result>
+		</action>
+		<!-- 便签 -->
+		<action name="notes_*" class="noteAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/noteAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/noteAction/saveUI.jsp
+			</result>
+			<result name="toList" type="redirectAction">notes_list</result>
+		</action>
+		<!-- 日历 -->
+		<action name="calendar_*" class="calendarAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/calendarAction/list.jsp</result>
 
 		</action>
-
+		<!-- 资料变更 -->
+		<action name="data_*" class="dataAction" method="{1}">
+			<result name="saveUI">/WEB-INF/jsp/dataAction/saveUI.jsp</result>
+			<result name="toList">/WEB-INF/jsp/dataAction/saveUI.jsp</result>
+		</action>
+		<!-- 密码变更 -->
+		<action name="password_*" class="passwordAction" method="{1}">
+			<result name="saveUI">/WEB-INF/jsp/passwordAction/saveUI.jsp</result>
+			<result name="toList">/WEB-INF/jsp/passwordAction/msg.jsp</result>
+		</action>
 		<!-- 审批流转：审批模板管理 -->
 		<!-- <action name="template_*" class="templatetypeAction" method="{1}"> 
 			<result name="list">/WEB-INF/jsp/templateAction/list.jsp</result> <result 
@@ -118,8 +139,10 @@
 			<result name="saveUI">/WEB-INF/jsp/templateAction/filesaveUI.jsp</result> 
 			<result name="toList" type="redirectAction">templatefile_list?TypeId=${TypeId} 
 			</result> </action> -->
-		<!-- 审批流转：申请管理 -->
-		<action name="flow_*" class="" method="{1}"></action>
+		<!-- 审批流转 -->
+		<action name="template_*" class="" method="{1}">
+
+		</action>
 
 	</package>
 

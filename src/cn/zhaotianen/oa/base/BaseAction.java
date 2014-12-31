@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import cn.zhaotianen.oa.domain.User;
 import cn.zhaotianen.oa.service.DepartmentService;
 import cn.zhaotianen.oa.service.ForumService;
+import cn.zhaotianen.oa.service.NoteService;
 import cn.zhaotianen.oa.service.PrivilegeService;
 import cn.zhaotianen.oa.service.ReplyService;
 import cn.zhaotianen.oa.service.RoleService;
@@ -57,6 +58,8 @@ public abstract class BaseAction<T> extends ActionSupport implements
 	protected TopicService topicService;
 	@Resource
 	protected ReplyService replyService;
+	@Resource
+	protected NoteService noteService;
 	
 	/**
 	 * 获取当前登录的用户

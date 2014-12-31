@@ -38,7 +38,7 @@ public class Installer {
 		// 保存权限数据
 		Privilege menu, menu1, menu2, menu3, menu4, menu5;
 
-		// --------------------
+		// --------系统管理------------
 		menu = new Privilege("系统管理", null, null);
 		menu1 = new Privilege("岗位管理", "/role_list", menu);
 		menu2 = new Privilege("部门管理", "/department_list", menu);
@@ -64,7 +64,7 @@ public class Installer {
 		session.save(new Privilege("用户修改", "/user_edit", menu3));
 		session.save(new Privilege("初始化密码", "/user_initPassword", menu3));
 
-		// --------------------
+		// ---------网上交流-----------
 		menu = new Privilege("网上交流", null, null);
 		menu1 = new Privilege("论坛管理", "/forumManage_list", menu);
 		menu2 = new Privilege("论坛", "/forum_list", menu);
@@ -72,7 +72,7 @@ public class Installer {
 		session.save(menu1);
 		session.save(menu2);
 
-		// --------------------
+		// -----------审批流转---------
 		menu = new Privilege("审批流转", null, null);
 		menu1 = new Privilege("审批流程管理", "/processDefinition_list", menu);
 		menu2 = new Privilege("申请模板管理", "/template_list", menu);
@@ -85,10 +85,25 @@ public class Installer {
 		session.save(menu3);
 		session.save(menu4);
 		session.save(menu5);
+
+		// -----------个人事务---------
+		menu = new Privilege("个人事务", null, null);
+		menu1 = new Privilege("通讯录", "/contact_list", menu);
+		menu2 = new Privilege("便签", "/notes_list", menu);
+		menu3 = new Privilege("日历", "/calendar_list", menu);
+		menu4 = new Privilege("资料变更", "/data_editUI", menu);
+		menu5 = new Privilege("密码修改", "/password_editUI", menu);
+		session.save(menu);
+		session.save(menu1);
+		session.save(menu2);
+		session.save(menu3);
+		session.save(menu4);
+		session.save(menu5);
 	}
 
 	public static void main(String[] args) {
-		ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+		ApplicationContext ac = new ClassPathXmlApplicationContext(
+				"applicationContext.xml");
 		Installer installer = (Installer) ac.getBean("installer");
 		installer.install();
 	}

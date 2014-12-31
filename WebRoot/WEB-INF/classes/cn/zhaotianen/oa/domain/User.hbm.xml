@@ -28,6 +28,12 @@
 			<many-to-many class="Role" column="roleId"></many-to-many>
 		</set>
 		
+		<!-- users属性，本类与Note的一对多 -->
+		<set name="notes">
+			<key column="userid"></key>
+			<one-to-many class="Note" />
+		</set>
+		
 		
 	</class>
 	

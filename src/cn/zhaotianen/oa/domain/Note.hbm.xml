@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.zhaotianen.oa.domain">
+
+	<class name="Note" table="oa_note">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="name" />
+		<property name="time" />
+		<property name="content" />
+		<property name="description" />
+		<!-- department属性，本类与Department的多对一 -->
+		<many-to-one name="user" class="User" column="userid"></many-to-one>
+
+	</class>
+	
+</hibernate-mapping>

@@ -24,6 +24,16 @@ public class User implements java.io.Serializable{
 	private String phoneNumber; // 电话号码
 	private String email; // 电子邮件
 	private String description; // 说明
+	
+	private Set<Note> notes =new HashSet<Note>();
+
+	public Set<Note> getNotes() {
+		return notes;
+	}
+
+	public void setNotes(Set<Note> notes) {
+		this.notes = notes;
+	}
 
 	/**
 	 * 判断本用户是否有指定名称的权限

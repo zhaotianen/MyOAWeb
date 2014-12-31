@@ -1,5 +1,7 @@
 package cn.zhaotianen.oa.service;
 
+import java.util.List;
+
 import cn.zhaotianen.oa.base.DaoSupport;
 import cn.zhaotianen.oa.domain.User;
 
@@ -15,4 +17,10 @@ public interface UserService extends DaoSupport<User> {
 	 */
 	User findByLoginNameAndPassword(String loginName, String password);
 
+	/**
+	 * 查询用户表部门列名，根据部门号分组
+	 * 
+	 * @return
+	 */
+	List<User> contactList();
 }
