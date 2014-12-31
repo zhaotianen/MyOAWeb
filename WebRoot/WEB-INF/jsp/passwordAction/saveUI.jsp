@@ -15,13 +15,12 @@
 				<tr>
 					<td colspan="3">
 						<!-- 显示错误 --> <font color="red"><s:fielderror /> </font></td>
-					<!-- 防止表单提交的方式 -->
-					<s:token />
 				</tr>
 				<tr>
 					<s:hidden name="userId"  />
 				</tr>
 				<tr>
+				<td ><label class="control-label">原密码:</label></td>
 					<td colspan="2"><s:password label="原密码" placeholder="原密码"
 							name="password" cssClass="input-lg form-control"
 							cssStyle="height:30px" required="true" showPassword="true"
@@ -29,6 +28,7 @@
 					</td>
 				</tr>
 				<tr>
+				<td ><label class="control-label">新密码:</label></td>
 					<td colspan="2"><s:password label="新密码" placeholder="新密码"
 							name="newPassword" cssClass="input-lg form-control"
 							cssStyle="height:30px" required="true" showPassword="true"
@@ -36,8 +36,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2"><s:password label="重复新密码密码"
-							placeholder="重复新密码密码" name="reNewPassword"
+				<td><label class="control-label">重复新密码:</label></td>
+					<td colspan="2"><s:password label="重复新密码"
+							placeholder="重复新密码" name="reNewPassword"
 							cssClass="input-lg form-control" cssStyle="height:30px"
 							required="true" showPassword="true" id="reNewPasswordId" />
 					</td>
