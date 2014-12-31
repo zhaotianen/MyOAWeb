@@ -51,7 +51,6 @@ public abstract class BaseAction<T> extends ActionSupport implements
 	protected UserService userService;
 	@Resource
 	protected PrivilegeService privilegeService;
-
 	@Resource
 	protected ForumService forumService;
 	@Resource
