@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.ActionContext;
  * @author ZTE
  * 
  */
-public class User implements java.io.Serializable{
+public class User implements java.io.Serializable {
 	private Long id;
 	private Department department;
 	private Set<Role> roles = new HashSet<Role>();
@@ -24,8 +24,8 @@ public class User implements java.io.Serializable{
 	private String phoneNumber; // 电话号码
 	private String email; // 电子邮件
 	private String description; // 说明
-	
-	private Set<Note> notes =new HashSet<Note>();
+	// ///////////////////////////////////////////
+	private Set<Note> notes = new HashSet<Note>();
 
 	public Set<Note> getNotes() {
 		return notes;
@@ -33,6 +33,16 @@ public class User implements java.io.Serializable{
 
 	public void setNotes(Set<Note> notes) {
 		this.notes = notes;
+	}
+
+	// ///////////////////////////////////////////
+	private Set<Flow> flows =new HashSet<Flow>();
+	public Set<Flow> getFlows() {
+		return flows;
+	}
+
+	public void setFlows(Set<Flow> flows) {
+		this.flows = flows;
 	}
 
 	/**
@@ -81,7 +91,8 @@ public class User implements java.io.Serializable{
 		}
 
 		// 如果本URL不需要控制，则登录用户就可以使用
-		Collection<String> allPrivilegeUrls = (Collection<String>) ActionContext.getContext().getApplication().get("allPrivilegeUrls");
+		Collection<String> allPrivilegeUrls = (Collection<String>) ActionContext
+				.getContext().getApplication().get("allPrivilegeUrls");
 		if (!allPrivilegeUrls.contains(privUrl)) {
 			return true;
 		} else {

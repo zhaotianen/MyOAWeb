@@ -76,9 +76,9 @@ public class Installer {
 		menu = new Privilege("审批流转", null, null);
 		menu1 = new Privilege("审批流程管理", "/processDefinition_list", menu);
 		menu2 = new Privilege("申请模板管理", "/template_list", menu);
-		menu3 = new Privilege("起草申请", "/flow_templateList", menu);
+		menu3 = new Privilege("起草申请", "/flow_addUI", menu);
 		menu4 = new Privilege("待我审批", "/flow_myTaskList", menu);
-		menu5 = new Privilege("我的申请查询", "/flow_myApplicationList", menu);
+		menu5 = new Privilege("我的申请查询", "/flow_list", menu);
 		session.save(menu);
 		session.save(menu1);
 		session.save(menu2);

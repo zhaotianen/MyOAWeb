@@ -16,10 +16,10 @@
 		<property name="connection.username">root</property> <property name="connection.password">root</property> -->
 
 	<!-- 2，其他配置 -->
-	<property name="show_sql">true</property>
 	<property name="hbm2ddl.auto">update</property>
 
 	<!-- 3，导入映射文件 -->
+	<property name="format_sql">true</property>
 
 	<mapping resource="cn/zhaotianen/oa/domain/User.hbm.xml" />
 	<mapping resource="cn/zhaotianen/oa/domain/Role.hbm.xml" />
@@ -29,6 +29,7 @@
 	<mapping resource="cn/zhaotianen/oa/domain/Reply.hbm.xml" />
 	<mapping resource="cn/zhaotianen/oa/domain/Topic.hbm.xml" />
 	<mapping resource="cn/zhaotianen/oa/domain/Note.hbm.xml" />
+	<mapping resource="cn/zhaotianen/oa/domain/Flow.hbm.xml" />
 
 
 </session-factory>

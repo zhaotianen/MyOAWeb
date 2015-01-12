@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import cn.zhaotianen.oa.domain.User;
 import cn.zhaotianen.oa.service.DepartmentService;
+import cn.zhaotianen.oa.service.FlowService;
 import cn.zhaotianen.oa.service.ForumService;
 import cn.zhaotianen.oa.service.NoteService;
 import cn.zhaotianen.oa.service.PrivilegeService;
@@ -59,7 +60,9 @@ public abstract class BaseAction<T> extends ActionSupport implements
 	protected ReplyService replyService;
 	@Resource
 	protected NoteService noteService;
-	
+	@Resource
+	protected FlowService flowService;
+
 	/**
 	 * 获取当前登录的用户
 	 * 

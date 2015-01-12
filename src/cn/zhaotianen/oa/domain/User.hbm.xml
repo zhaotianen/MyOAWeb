@@ -7,7 +7,7 @@
 
 	<class name="User" table="oa_user">
 		<id name="id">
-            <generator class="native"/>
+			<generator class="native" />
 		</id>
 		<property name="loginName" />
 		<property name="password" />
@@ -16,25 +16,30 @@
 		<property name="phoneNumber" />
 		<property name="email" />
 		<property name="description" />
-		
-		
+
+
 		<!-- department属性，本类与Department的多对一 -->
 		<many-to-one name="department" class="Department" column="departmentId"></many-to-one>
-		
-		
+
+
 		<!-- roles属性，本类与Role的多对多 -->
 		<set name="roles" table="oa_user_role" lazy="false">
 			<key column="userId"></key>
 			<many-to-many class="Role" column="roleId"></many-to-many>
 		</set>
-		
+
 		<!-- users属性，本类与Note的一对多 -->
 		<set name="notes">
 			<key column="userid"></key>
 			<one-to-many class="Note" />
 		</set>
-		
-		
+		<!-- users属性，本类与Flow的一对多 -->
+		<set name="flows">
+			<key column="createUserId"></key>
+			<one-to-many class="Flow" />
+		</set>
+
+
 	</class>
-	
+
 </hibernate-mapping>

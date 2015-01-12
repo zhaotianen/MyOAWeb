@@ -140,8 +140,13 @@
 			<result name="toList" type="redirectAction">templatefile_list?TypeId=${TypeId} 
 			</result> </action> -->
 		<!-- 审批流转 -->
-		<action name="template_*" class="" method="{1}">
-
+		<action name="flow_*" class="flowAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/flowAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/flowAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">flow_list</result>
+			<result name="myTaskList">/WEB-INF/jsp/flowAction/myTaskList.jsp</result>
+			<result name="readUI">/WEB-INF/jsp/flowAction/readUI.jsp</result>
+			<result name="toMyTaskList" type="redirectAction">flow_myTaskList</result>
 		</action>
 
 	</package>

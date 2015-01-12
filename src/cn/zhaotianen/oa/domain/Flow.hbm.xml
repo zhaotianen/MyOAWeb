@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.zhaotianen.oa.domain">
+
+	<class name="Flow" table="oa_flow">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="type" />
+		<property name="createTime" />
+		<property name="startTime" />
+		<property name="stopTime" />
+		<property name="reason" />
+		<property name="stauts" />
+		<property name="leaderOpinion" />
+		<property name="leaderTime" />
+		<!-- "createUser"属性，本类与User的多对一 -->
+		<many-to-one name="createUser" class="User" column="createUserId"></many-to-one>
+
+
+	</class>
+
+</hibernate-mapping>
