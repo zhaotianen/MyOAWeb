@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.opensymphony.xwork2.ActionContext;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 /**
  * 用户
@@ -24,7 +25,7 @@ public class User implements java.io.Serializable {
 	private String phoneNumber; // 电话号码
 	private String email; // 电子邮件
 	private String description; // 说明
-	// ///////////////////////////////////////////
+	// ////////笔记//////////////////////////
 	private Set<Note> notes = new HashSet<Note>();
 
 	public Set<Note> getNotes() {
@@ -35,7 +36,7 @@ public class User implements java.io.Serializable {
 		this.notes = notes;
 	}
 
-	// ///////////////////////////////////////////
+	// ////////创建者///////////////////
 	private Set<Flow> flows =new HashSet<Flow>();
 	public Set<Flow> getFlows() {
 		return flows;
@@ -43,6 +44,19 @@ public class User implements java.io.Serializable {
 
 	public void setFlows(Set<Flow> flows) {
 		this.flows = flows;
+	}
+	
+	// ////////审批者///////////////////
+	private Set<Flow> leaderUser =new HashSet<Flow>();
+	
+	
+
+	public Set<Flow> getLeaderUser() {
+		return leaderUser;
+	}
+
+	public void setLeaderUser(Set<Flow> leaderUser) {
+		this.leaderUser = leaderUser;
 	}
 
 	/**

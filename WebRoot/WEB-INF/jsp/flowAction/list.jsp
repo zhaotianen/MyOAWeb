@@ -28,7 +28,7 @@
 
 		<table class="table table-hover">
 			<caption>
-				<h2>申请列表</h2>
+				<h2>我的申请列表</h2>
 			</caption>
 			<thead>
 				<tr>
@@ -37,6 +37,7 @@
 					<th>开始时间</th>
 					<th>结束时间</th>
 					<th>理由</th>
+					<th>审批者</th>
 					<th>状态</th>
 					<th>操作</th>
 				</tr>
@@ -49,6 +50,7 @@
 						<td>${startTime}</td>
 						<td>${stopTime}</td>
 						<td>${reason}</td>
+						<td>${leaderUser.name}【${leaderUser.department.name}】</td>
 						<td>${stauts}</td>
 						<td><s:a action="flow_delete?id=%{id}"
 								onclick="return window.confirm('您确定要删除吗？')">删除</s:a> <s:if

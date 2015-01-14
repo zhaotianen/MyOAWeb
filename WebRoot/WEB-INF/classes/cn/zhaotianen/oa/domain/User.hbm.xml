@@ -33,9 +33,14 @@
 			<key column="userid"></key>
 			<one-to-many class="Note" />
 		</set>
-		<!-- users属性，本类与Flow的一对多 -->
+		<!-- createUser属性，本类与Flow的一对多 -->
 		<set name="flows">
 			<key column="createUserId"></key>
+			<one-to-many class="Flow" />
+		</set>
+		<!-- leaderUser属性，本类与Flow的一对多 -->
+		<set name="leaderUser">
+			<key column="leaderUserId"></key>
 			<one-to-many class="Flow" />
 		</set>
 

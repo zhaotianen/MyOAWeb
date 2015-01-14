@@ -19,6 +19,8 @@
 		<property name="leaderTime" />
 		<!-- "createUser"属性，本类与User的多对一 -->
 		<many-to-one name="createUser" class="User" column="createUserId"></many-to-one>
+		<!-- "leaderUser"属性，本类与User的多对一 -->
+		<many-to-one name="leaderUser" class="User" column="leaderUserId"></many-to-one>
 
 
 	</class>

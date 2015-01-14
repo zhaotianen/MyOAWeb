@@ -49,8 +49,8 @@ public class FlowAction extends BaseAction<Flow> {
 
 	/** 添加 */
 	public String add() throws Exception {
-		model.setCreateTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-				.format(new Date()));
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		model.setCreateTime(sdf.format(new Date()));
 		model.setCreateUser(u);
 		model.setStauts("提交申请");
 		flowService.save(model);
@@ -85,6 +85,9 @@ public class FlowAction extends BaseAction<Flow> {
 		Long id = u.getDepartment().getId();
 		List<Flow> list = flowService.getByDepartmentId(id);
 		ActionContext.getContext().put("myTaskList", list);
+		
+		List<Flow> list1 = flowService.getByDepartmentId1(id);
+		ActionContext.getContext().put("myTaskList1", list1);
 		return "myTaskList";
 	}
 

@@ -43,14 +43,14 @@
 				<tr>
 					<td><label class="control-label">开始时间:</label></td>
 					<td><sx:datetimepicker language="UTF-8" name="startTime"
-							cssClass="height:30px" displayFormat="yyyy-MM-dd"
+							cssStyle="height:30px;width:200px" displayFormat="yyyy-MM-dd HH:mm:ss"
 							value="%{new java.util.Date()}" disabled="true" />
 					</td>
 				</tr>
 				<tr>
 					<td><label class="control-label">结束时间:</label></td>
 					<td><sx:datetimepicker language="UTF-8" name="stopTime"
-							cssClass="height:30px" displayFormat="yyyy-MM-dd" disabled="true" />
+							cssStyle="height:30px;width:200px" displayFormat="yyyy-MM-dd HH:mm:ss" disabled="true" />
 					</td>
 				</tr>
 				<tr>

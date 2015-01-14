@@ -30,8 +30,17 @@ public class FlowServiceImpl extends DaoSupportImpl<Flow> implements
 	}
 
 	public List<Flow> getByDepartmentId(Long id) {
-		
-		return getSession().createQuery("from Flow f where f.createUser.department.id=? and f.stauts='提交申请'").setParameter(0, id).list();
+		return getSession()
+				.createQuery(
+						"from Flow f where f.createUser.department.id=? and f.stauts='提交申请'")
+				.setParameter(0, id).list();
+	}
+
+	public List<Flow> getByDepartmentId1(Long id) {
+		return getSession()
+				.createQuery(
+						"from Flow f where f.createUser.department.id=? and f.stauts='同意' or f.stauts='不同意'")
+				.setParameter(0, id).list();
 	}
 
 }

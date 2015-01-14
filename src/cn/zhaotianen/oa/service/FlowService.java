@@ -29,4 +29,11 @@ public interface FlowService extends DaoSupport<Flow> {
 	 * @return
 	 */
 	List<Flow> getByDepartmentId(Long id);
+	/**
+	 * 我已审批
+	 * 
+	 * @param id
+	 * @return
+	 */
+	List<Flow> getByDepartmentId1(Long id);
 }
