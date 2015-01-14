@@ -44,7 +44,7 @@
 					<td><sx:datetimepicker language="UTF-8" toggleType="explode"
 							name="startTime" cssStyle="height:30px;width:200px"
 							displayFormat="yyyy-MM-dd HH:mm:ss" value="%{'today'}" formatLength="long"
-							displayWeeks="5" />
+							displayWeeks="5" weekStartsOn="1"/>
 					</td>
 				</tr>
 				<tr>

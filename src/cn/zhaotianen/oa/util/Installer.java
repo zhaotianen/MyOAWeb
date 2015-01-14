@@ -99,6 +99,9 @@ public class Installer {
 		session.save(menu3);
 		session.save(menu4);
 		session.save(menu5);
+		// -----------简单邮件---------
+		// -----------内部交流---------
+
 	}
 
 	public static void main(String[] args) {
