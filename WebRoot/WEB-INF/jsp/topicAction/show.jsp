@@ -106,14 +106,6 @@
 								</div> <!--作者名称-->
 								<div>${author.name}</div>
 							</td>
-							<td align="right"><a
-								href="${pageContext.request.contextPath}/BBS_Topic/saveUI.html"><img
-									border="0"
-									src="${pageContext.request.contextPath}/style/images/edit.gif" />编辑</a>
-								<a href="#" onClick="return confirm('确定要删除本帖吗？')"><img
-									border="0"
-									src="${pageContext.request.contextPath}/style/images/delete.gif" />删除</a>
-							</td>
 						</tr>
 						<tr>
 							<!-- 文章内容 -->
@@ -149,47 +141,6 @@
 			<%@ include file="/WEB-INF/jsp/public/pageView.jspf"%>
 			<s:form action="topic_show?id=%{id}"></s:form>
 		</div>
-
-
-
-
-		<!--快速回复-->
-
-		<!--<div style="margin-top: 25px;" align="right">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
-				<tr valign="bottom">
-					<td width="3" class="ForumPageTableTitleLeft">&nbsp;</td>
-					<td><b>快速回复</b></td>
-					<td width="3">&nbsp;</td>
-				</tr>
-				<tr height="1">
-					<td colspan="3"></td>
-				</tr>
-			</table>
-		</div> 
-		<form action="">
-			<div style="padding-left: 3px;">
-				<table border="0" cellspacing="1" width="98%" cellpadding="5">
-					<tr height="30">
-						<td width="50px"><b>标题</b>
-						</td>
-						<td><input type="text" name="title" value="回复：昨天发现在表单里删除的图片"
-							style="width:90%" /></td>
-					</tr>
-					<tr height="200">
-						<td valign="top" rowspan="2"><b>内容</b>
-						</td>
-						<td valign="top"><textarea name="content"
-								style="width: 95%; height: 300px"></textarea></td>
-					</tr>
-					<tr height="30">
-						<td colspan="2" align="center"><input type="submit"
-							value="提交" class="btn btn-primary btn-lg" /></td>
-					</tr>
-				</table>
-			</div>
-		</form>-->
-
 	</div>
 
 </body>

@@ -33,17 +33,13 @@
 						<td>${c.phoneNumber}&nbsp;</td>
 						<td>${c.email}&nbsp;</td>
 						<td>${c.description}&nbsp;</td>
-						<td><s:a action="email_send?id=%{top.id}">发电子邮件</s:a> <s:a
-								action="user_editUI?id=%{top.id}">发即时信息</s:a></td>
+						<td><s:a href="mailto:%{top.email}"
+								cssClass="btn btn-info btn-lg">发电子邮件</s:a></td>
 					</tr>
 				</s:iterator>
 
 			</tbody>
 		</table>
 	</div>
-
-
-
-
 </body>
 </html>

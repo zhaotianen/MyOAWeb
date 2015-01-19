@@ -835,7 +835,7 @@ document.bgColor=hval;
 
 <DIV id=detail style="POSITION: absolute"></DIV>
 <CENTER>
-<FORM name=CLD onsubmit="return false">
+<FORM name=CLD onsubmit="return false" style="margin-top: 60px">
 <TABLE>
   <TBODY>
   <TR>
