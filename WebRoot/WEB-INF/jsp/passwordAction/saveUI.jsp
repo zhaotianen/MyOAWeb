@@ -44,8 +44,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td><s:submit value="提交" align="right"
-							cssClass="btn btn-primary" />
+					<td><button type="submit" class="btn btn-primary btn-lg">保存</button>
 					</td>
 					<td><s:reset value="重置" align="left"
 							cssClass="btn btn-warning" />

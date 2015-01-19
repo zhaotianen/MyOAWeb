@@ -29,7 +29,8 @@ public class UserAction extends BaseAction<User> {
 		// ActionContext.getContext().put("userList", userList);
 
 		// 准备分页信息
-		new QueryHelper(User.class, "u").preparePageBean(userService, pageNum, pageSize);
+		new QueryHelper(User.class, "u").preparePageBean(userService, pageNum,
+				pageSize);
 
 		return "list";
 	}
@@ -44,7 +45,8 @@ public class UserAction extends BaseAction<User> {
 	public String addUI() throws Exception {
 		// 准备数据, departmentList
 		List<Department> topList = departmentService.findTopList();
-		List<Department> departmentList = DepartmentUtils.getAllDepartments(topList);
+		List<Department> departmentList = DepartmentUtils
+				.getAllDepartments(topList);
 		ActionContext.getContext().put("departmentList", departmentList);
 
 		// 准备数据, roleList
@@ -76,7 +78,8 @@ public class UserAction extends BaseAction<User> {
 	public String editUI() throws Exception {
 		// 准备数据, departmentList
 		List<Department> topList = departmentService.findTopList();
-		List<Department> departmentList = DepartmentUtils.getAllDepartments(topList);
+		List<Department> departmentList = DepartmentUtils
+				.getAllDepartments(topList);
 		ActionContext.getContext().put("departmentList", departmentList);
 
 		// 准备数据, roleList
@@ -146,15 +149,26 @@ public class UserAction extends BaseAction<User> {
 
 	/** 登录 */
 	public String login() throws Exception {
-		User user = userService.findByLoginNameAndPassword(model.getLoginName(), model.getPassword());
-		if (user == null) {
-			addFieldError("login", "登录失败！");
+
+		if (model.getLoginName().equals("")) {// 判断用户名为空
+			addFieldError("loginName", "用户名不能为空！");
 			return "loginUI";
-		} else {
-			// 登录用户
-			ActionContext.getContext().getSession().put("user", user);
-			return "toIndex";
+		} else if (model.getPassword().equals("")) {// 判断密码为空
+			addFieldError("password", "密码不能为空！");
+			return "loginUI";
+		} else {// 判断帐号存在
+			User user = userService.findByLoginNameAndPassword(
+					model.getLoginName(), model.getPassword());
+			if (user == null) {
+				addFieldError("login", "未成功登录！");
+				return "loginUI";
+			} else {
+				// 登录用户
+				ActionContext.getContext().getSession().put("user", user);
+				return "toIndex";
+			}
 		}
+
 	}
 
 	/** 注销 */

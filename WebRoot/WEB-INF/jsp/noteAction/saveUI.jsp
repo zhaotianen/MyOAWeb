@@ -51,7 +51,7 @@
 				</tr>
 			</table>
 			<!-- 表单操作 -->
-			<input type="submit" value="保存" class="btn btn-primary btn-lg" />
+			<button type="submit" class="btn btn-primary btn-lg">保存</button>
 			<a href="javascript:history.go(-1);" class="btn btn-info btn-lg">返回
 			</a>
 		</s:form>

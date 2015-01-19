@@ -41,7 +41,8 @@ public class DepartmentAction extends BaseAction<Department> {
 	public String addUI() throws Exception {
 		// 准备数据, departmentList
 		List<Department> topList = departmentService.findTopList();
-		List<Department> departmentList = DepartmentUtils.getAllDepartments(topList);
+		List<Department> departmentList = DepartmentUtils
+				.getAllDepartments(topList);
 		ActionContext.getContext().put("departmentList", departmentList);
 		return "saveUI";
 	}
@@ -49,9 +50,6 @@ public class DepartmentAction extends BaseAction<Department> {
 	/** 添加 */
 	public String add() throws Exception {
 		// 封装信息到对象中
-		// Department department = new Department();
-		// department.setName(name);
-		// department.setDescription(description)
 		Department parent = departmentService.getById(parentId);
 		model.setParent(parent);
 
@@ -65,7 +63,8 @@ public class DepartmentAction extends BaseAction<Department> {
 	public String editUI() throws Exception {
 		// 准备数据, departmentList
 		List<Department> topList = departmentService.findTopList();
-		List<Department> departmentList = DepartmentUtils.getAllDepartments(topList);
+		List<Department> departmentList = DepartmentUtils
+				.getAllDepartments(topList);
 		ActionContext.getContext().put("departmentList", departmentList);
 
 		// 准备回显的数据

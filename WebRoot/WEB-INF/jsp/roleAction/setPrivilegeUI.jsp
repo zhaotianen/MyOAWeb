@@ -97,7 +97,7 @@
 
 
 			<!-- 表单操作 -->
-			<input type="submit" value="提交" />
+			<button type="submit" class="btn btn-primary btn-lg">保存</button>
 			<a href="javascript:history.go(-1);" >返回 </a>
 		</s:form>
 	</div>

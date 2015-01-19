@@ -6,8 +6,6 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/script/jquery_treeview/jquery.cookie.js"></script>
 </head>
-
-
 <body>
 	<div class="container">
 		<%@ include file="/WEB-INF/jsp/public/top.jspf"%>

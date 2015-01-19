@@ -70,7 +70,7 @@
 						<td colspan="2">
 							<div align="center">
 								<!-- 表单操作 -->
-								<input type="submit" value="提交" class="btn btn-primary btn-lg" />
+								<button type="submit" class="btn btn-primary btn-lg">保存</button>
 								<a href="javascript:history.go(-1);"
 									class="btn btn-warning btn-lg">返回 </a>
 							</div>

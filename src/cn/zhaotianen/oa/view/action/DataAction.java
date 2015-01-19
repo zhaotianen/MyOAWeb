@@ -42,7 +42,7 @@ public class DataAction extends BaseAction<User> {
 		User user = userService.getById(u.getId());
 
 		// 2，设置要修改的属性
-		user.setLoginName(model.getLoginName());
+	//	user.setLoginName(model.getLoginName());
 		user.setName(model.getName());
 		user.setGender(model.getGender());
 		user.setPhoneNumber(model.getPhoneNumber());

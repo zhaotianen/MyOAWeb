@@ -34,34 +34,38 @@
 			<!-- 表单内容显示 -->
 			<table cellpadding="0" cellspacing="0">
 				<tr>
-					<td><label class="control-label">类型:</label></td>
+					<td><label class="control-label">类型:</label>
+					</td>
 					<td><s:select
 							list="#{'事假':'事假','病假':'病假','婚假':'婚假','年假':'年假','休假':'休假'}"
-							listKey="key" listValue="value" name="type"></s:select></td>
+							listKey="key" listValue="value" name="type"></s:select>
+					</td>
 				</tr>
 				<tr>
-					<td><label class="control-label">开始时间:</label></td>
+					<td><label class="control-label">开始时间:</label>
+					</td>
 					<td><sx:datetimepicker language="UTF-8" toggleType="explode"
 							name="startTime" cssStyle="height:30px;width:200px"
-							displayFormat="yyyy-MM-dd HH:mm:ss" value="%{'today'}" formatLength="long"
-							displayWeeks="5" weekStartsOn="1"/>
-					</td>
+							displayFormat="yyyy-MM-dd HH:mm:ss" value="%{'today'}"
+							formatLength="long" displayWeeks="5" weekStartsOn="1" /></td>
 				</tr>
 				<tr>
-					<td><label class="control-label">结束时间:</label></td>
+					<td><label class="control-label">结束时间:</label>
+					</td>
 					<td><sx:datetimepicker language="UTF-8" toggleType="explode"
 							name="stopTime" cssStyle="height:30px;width:200px"
-							displayFormat="yyyy-MM-dd HH:mm:ss" formatLength="long" displayWeeks="5" />
-					</td>
+							displayFormat="yyyy-MM-dd HH:mm:ss" formatLength="long"
+							displayWeeks="5" /></td>
 				</tr>
 				<tr>
-					<td><label class="control-label">理由/原因:</label></td>
+					<td><label class="control-label">理由/原因:</label>
+					</td>
 					<td><s:textarea name="reason" placeholder="理由/原因"></s:textarea>
 					</td>
 				</tr>
 			</table>
 			<!-- 表单操作 -->
-			<input type="submit" value="提交" class="btn btn-primary btn-lg" />
+			<button type="submit" class="btn btn-primary btn-lg">保存</button>
 			<a href="javascript:history.go(-1);" class="btn btn-info btn-lg">返回
 			</a>
 		</s:form>
