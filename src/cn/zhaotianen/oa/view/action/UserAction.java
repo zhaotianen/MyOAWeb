@@ -148,7 +148,7 @@ public class UserAction extends BaseAction<User> {
 	public String login() throws Exception {
 		User user = userService.findByLoginNameAndPassword(model.getLoginName(), model.getPassword());
 		if (user == null) {
-			addFieldError("login", "用户名或密码不正确！");
+			addFieldError("login", "登录失败！");
 			return "loginUI";
 		} else {
 			// 登录用户
