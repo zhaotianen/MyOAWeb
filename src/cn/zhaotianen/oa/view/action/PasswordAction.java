@@ -58,9 +58,10 @@ public class PasswordAction extends BaseAction<User> {
 									+ newPassword
 									+ "】,请妥善保管!<br/><a class='btn btn-primary' href='user_logout.action'>重新登录</a>");
 			return "toList";
+		} else {
+			addFieldError("msg", "修改失败，原密码错误！");
+			return INPUT;
 		}
-		return null;
 
 	}
-
 }

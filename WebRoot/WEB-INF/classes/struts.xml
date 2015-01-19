@@ -128,6 +128,7 @@
 		<!-- 密码变更 -->
 		<action name="password_*" class="passwordAction" method="{1}">
 			<result name="saveUI">/WEB-INF/jsp/passwordAction/saveUI.jsp</result>
+			<result name="input">/WEB-INF/jsp/passwordAction/saveUI.jsp</result>
 			<result name="toList">/WEB-INF/jsp/passwordAction/msg.jsp</result>
 		</action>
 		<!-- 审批流转：审批模板管理 -->
