@@ -18,13 +18,18 @@
 		fck.ReplaceTextarea();
 	});
 </script>
+<script type="text/javascript">
+	$().ready(function() {
+		$("#myForm").validate();
+	});
+</script>
 </head>
 <body>
 	<!--显示表单内容-->
 	<div class="container" style="overflow:auto;overflow-x: hidden">
 		<%@ include file="/WEB-INF/jsp/public/top.jspf"%>
 
-		<s:form action="reply_add" cssStyle="margin: 0; padding: 0;">
+		<s:form action="reply_add" cssStyle="margin: 0; padding: 0;" id="myForm">
 			<s:hidden name="topicId"></s:hidden>
 
 			<div id="PageHead"></div>
@@ -52,7 +57,7 @@
 						</td>
 						<td><div>
 								<s:textfield name="title" cssStyle="width:100%;height:30px"
-									size="30" placeholder="标题" value="回复：%{#topic.title}" />
+									size="30" placeholder="标题" value="回复：%{#topic.title}" cssClass="{required:true,minlength:1,maxlength:140,messages:{required:'请输入标题'}}"/>
 							</div>
 						</td>
 					</tr>
@@ -62,7 +67,7 @@
 						<td>
 							<div>
 								<s:textarea name="content" cssStyle="width:650px;height:200px"
-									placeholder="内容"></s:textarea>
+									placeholder="内容" cssClass="{required:true,minlength:1,maxlength:140,messages:{required:'请输入内容'}}"></s:textarea>
 							</div>
 						</td>
 					</tr>

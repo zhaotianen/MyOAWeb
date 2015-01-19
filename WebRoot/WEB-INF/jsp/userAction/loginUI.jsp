@@ -3,6 +3,11 @@
 <head>
 <title>OA</title>
 <%@ include file="/WEB-INF/jsp/public/commons.jspf"%>
+<script type="text/javascript">
+	$().ready(function() {
+		$("#loginForm").validate();
+	});
+</script>
 </head>
 <body style="background-color: #0099CC">
 	<!-- 显示表单 -->
@@ -11,7 +16,7 @@
 		<h1 class="page-header">
 			OA <small>登录入口</small>
 		</h1>
-		<s:form action="user_login" method="post">
+		<s:form action="user_login" method="post" id="loginForm">
 			<table>
 				<tr>
 					<td colspan="2">
@@ -22,7 +27,8 @@
 					<td><label class="control-label"><span
 							class="icon-user"></span>用户名:</label></td>
 					<td><s:textfield name="loginName" size="30" placeholder="登录名"
-							cssStyle="height:30px" />
+							cssStyle="height:30px"
+							cssClass="{required:true,minlength:3,messages:{required:'用户名不为空'}}" />
 					</td>
 				</tr>
 				<tr>
@@ -30,7 +36,8 @@
 							class="icon-lock"></span>密码:</label>
 					</td>
 					<td><s:password name="password" size="30" showPassword="true"
-							placeholder="密码" cssStyle="height:30px" />
+							placeholder="密码" cssStyle="height:30px"
+							cssClass="{required:true,minlength:4,messages:{required:'密码不为空'}}" />
 					</td>
 				</tr>
 				<tr align="center">

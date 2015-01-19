@@ -15,7 +15,11 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.js"></script>
 
-
+<!-- 表单验证 -->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/script/jquery_validate/jquery.validate.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/script/jquery_validate/jquery.metadata.js"></script>
 
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/script/pageCommon.js"

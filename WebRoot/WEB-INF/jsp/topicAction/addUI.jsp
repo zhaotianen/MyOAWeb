@@ -18,6 +18,11 @@
 		fck.ReplaceTextarea();
 	});
 </script>
+<script type="text/javascript">
+	$().ready(function() {
+		$("#myForm").validate();
+	});
+</script>
 </head>
 <body>
 
@@ -27,7 +32,8 @@
 		<%@ include file="/WEB-INF/jsp/public/top.jspf"%>
 
 
-		<s:form action="topic_add" cssStyle="margin: 0; padding: 0;">
+		<s:form action="topic_add" cssStyle="margin: 0; padding: 0;"
+			id="myForm">
 			<s:hidden name="forumId"></s:hidden>
 
 			<div id="PageHead"></div>
@@ -46,18 +52,18 @@
 					id="InputArea">
 					<tr>
 						<td><label class="control-label"><font size="5px">标题:</font>
-						</label>
-						</td>
+						</label></td>
 						<td><s:textfield name="title"
-								cssStyle="width:100%;height:30px" size="30" placeholder="标题" />
+								cssStyle="width:100%;height:30px" size="30" placeholder="标题"
+								cssClass="{required:true,minlength:1,maxlength:140,messages:{required:'请输入内容'}}" />
 						</td>
 					</tr>
 					<tr height="240">
 						<td><label class="control-label"><font size="5px">内容:</font>
-						</label>
-						</td>
+						</label></td>
 						<td><s:textarea name="content"
-								cssStyle="width:650px;height:200px" placeholder="内容"></s:textarea>
+								cssStyle="width:650px;height:200px" placeholder="内容"
+								cssClass="{required:true,minlength:1,maxlength:140,messages:{required:'请输入内容'}}"></s:textarea>
 						</td>
 
 					</tr>
@@ -68,7 +74,8 @@
 								<button type="submit" class="btn btn-primary btn-lg">保存</button>
 								<a href="javascript:history.go(-1);"
 									class="btn btn-warning btn-lg">返回 </a>
-							</div></td>
+							</div>
+						</td>
 					</tr>
 				</table>
 

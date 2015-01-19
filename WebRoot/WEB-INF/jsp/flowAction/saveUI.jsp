@@ -24,43 +24,48 @@
 <meta http-equiv="description" content="This is my page">
 
 <%@ include file="/WEB-INF/jsp/public/commons.jspf"%>
+<script type="text/javascript">
+	$().ready(function() {
+		$("#myForm").validate();
+	});
+</script>
 <sx:head extraLocales="UTF-8" />
 </head>
 <body>
 	<div class="container">
 		<%@ include file="/WEB-INF/jsp/public/top.jspf"%>
-		<s:form action="flow_%{id == null ? 'add' : 'edit'}">
+		<s:form action="flow_%{id == null ? 'add' : 'edit'}" id="myForm">
 			<s:hidden name="id"></s:hidden>
 			<!-- 表单内容显示 -->
 			<table cellpadding="0" cellspacing="0">
 				<tr>
-					<td><label class="control-label">类型:</label>
-					</td>
+					<td><label class="control-label">类型:</label></td>
 					<td><s:select
 							list="#{'事假':'事假','病假':'病假','婚假':'婚假','年假':'年假','休假':'休假'}"
-							listKey="key" listValue="value" name="type"></s:select>
-					</td>
+							listKey="key" listValue="value" name="type"></s:select></td>
 				</tr>
 				<tr>
-					<td><label class="control-label">开始时间:</label>
-					</td>
+					<td><label class="control-label">开始时间:</label></td>
 					<td><sx:datetimepicker language="UTF-8" toggleType="explode"
 							name="startTime" cssStyle="height:30px;width:200px"
 							displayFormat="yyyy-MM-dd HH:mm:ss" value="%{'today'}"
-							formatLength="long" displayWeeks="5" weekStartsOn="1" /></td>
+							formatLength="long" displayWeeks="5" weekStartsOn="1"
+							cssClass="{required:true,messages:{required:'请选择开始时间'}}" />
+					</td>
 				</tr>
 				<tr>
-					<td><label class="control-label">结束时间:</label>
-					</td>
+					<td><label class="control-label">结束时间:</label></td>
 					<td><sx:datetimepicker language="UTF-8" toggleType="explode"
 							name="stopTime" cssStyle="height:30px;width:200px"
 							displayFormat="yyyy-MM-dd HH:mm:ss" formatLength="long"
-							displayWeeks="5" /></td>
+							displayWeeks="5"
+							cssClass="{required:true,messages:{required:'请选择结束时间'}}" />
+					</td>
 				</tr>
 				<tr>
-					<td><label class="control-label">理由/原因:</label>
-					</td>
-					<td><s:textarea name="reason" placeholder="理由/原因"></s:textarea>
+					<td><label class="control-label">理由/原因:</label></td>
+					<td><s:textarea name="reason" placeholder="理由/原因"
+							cssClass="{required:true,minlength:5,maxlength:140,messages:{required:'请输入理由/原因'}}"></s:textarea>
 					</td>
 				</tr>
 			</table>

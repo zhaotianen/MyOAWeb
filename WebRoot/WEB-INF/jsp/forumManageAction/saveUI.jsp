@@ -3,13 +3,18 @@
 <head>
 <title>版块设置</title>
 <%@ include file="/WEB-INF/jsp/public/commons.jspf"%>
+<script type="text/javascript">
+	$().ready(function() {
+		$("#myForm").validate();
+	});
+</script>
 </head>
 <body>
 	<!--显示表单内容-->
 	<div class="container">
 		<%@ include file="/WEB-INF/jsp/public/top.jspf"%>
 
-		<s:form action="forumManage_%{id == null ? 'add' : 'edit'}">
+		<s:form action="forumManage_%{id == null ? 'add' : 'edit'}" id="myForm">
 			<s:hidden name="id"></s:hidden>
 			<!-- 表单内容显示 -->
 
@@ -17,7 +22,7 @@
 				<tr>
 					<td><label class="control-label">版块名称:</label></td>
 					<td><s:textfield name="name" size="30" placeholder="版块名称"
-							cssStyle="height:30px" /> *</td>
+							cssStyle="height:30px" cssClass="{required:true,minlength:1,maxlength:140,messages:{required:'请输入版块名称'}}"/> *</td>
 				</tr>
 				<tr>
 					<td><label class="control-label">版块说明:</label>

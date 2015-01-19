@@ -24,7 +24,8 @@
 					<td><label class="control-label">登录名:</label>
 					</td>
 					<td><s:textfield name="loginName" size="30" placeholder="登录名"
-							cssStyle="height:30px" /> * （登录名不能重复）</td>
+							cssStyle="height:30px" disabled="true" />
+					</td>
 				</tr>
 				<tr>
 					<td><label class="control-label">姓名:</label>
@@ -42,14 +43,15 @@
 					<td><label class="control-label">联系电话:</label>
 					</td>
 					<td><s:textfield name="phoneNumber" size="30"
-							placeholder="联系电话" cssStyle="height:30px" />
+							placeholder="联系电话" cssStyle="height:30px"
+							cssClass="{digits:true}" />
 					</td>
 				</tr>
 				<tr>
 					<td><label class="control-label">E-mail:</label>
 					</td>
 					<td><s:textfield name="email" size="30" placeholder="E-mail"
-							cssStyle="height:30px" /></td>
+							cssStyle="height:30px" cssClass="{email:true}" /></td>
 				</tr>
 				<tr>
 					<td><label class="control-label">备注:</label>
