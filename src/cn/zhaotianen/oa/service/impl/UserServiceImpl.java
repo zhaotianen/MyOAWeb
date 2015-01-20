@@ -27,10 +27,20 @@ public class UserServiceImpl extends DaoSupportImpl<User> implements
 
 	public List<User> contactList() {
 
-		return getSession()
-				.createQuery(
-						"from User u order by u.department.id")
+		return getSession().createQuery("from User u order by u.department.id")
 				.list();
+	}
+
+	public boolean checkLoginName(String loginName) {
+		List<User> list = getSession()
+				.createQuery("from User u where u.loginName=?")
+				.setParameter(0, loginName).list();
+		if (list.size() != 0) {
+			return true;// 代表存在数据
+		} else {
+			return false;// 代表不存在数据
+		}
+
 	}
 
 }

@@ -23,6 +23,12 @@
 		$("#myForm").validate();
 	});
 </script>
+<style type="text/css">
+label.error {
+	margin-left: 10px;
+	color: red;
+}
+</style>
 </head>
 <body>
 

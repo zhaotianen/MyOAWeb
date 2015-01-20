@@ -23,13 +23,20 @@
 		$("#myForm").validate();
 	});
 </script>
+<style type="text/css">
+label.error {
+	margin-left: 10px;
+	color: red;
+}
+</style>
 </head>
 <body>
 	<!--显示表单内容-->
 	<div class="container" style="overflow:auto;overflow-x: hidden">
 		<%@ include file="/WEB-INF/jsp/public/top.jspf"%>
 
-		<s:form action="reply_add" cssStyle="margin: 0; padding: 0;" id="myForm">
+		<s:form action="reply_add" cssStyle="margin: 0; padding: 0;"
+			id="myForm">
 			<s:hidden name="topicId"></s:hidden>
 
 			<div id="PageHead"></div>
@@ -47,29 +54,29 @@
 				<table border="0" cellspacing="0" cellpadding="0" width="100%"
 					id="InputArea">
 					<tr>
-						<td height="30" width="80px"><div>帖子主题</div></td>
-						<td><div>${topic.title}</div>
+						<td height="30" width="80px"><div>帖子主题</div>
 						</td>
+						<td><div>${topic.title}</div></td>
 					</tr>
 					<tr>
 						<td><label class="control-label"><font size="5px">标题:</font>
-						</label>
-						</td>
+						</label></td>
 						<td><div>
 								<s:textfield name="title" cssStyle="width:100%;height:30px"
-									size="30" placeholder="标题" value="回复：%{#topic.title}" cssClass="{required:true,minlength:1,maxlength:140,messages:{required:'请输入标题'}}"/>
-							</div>
-						</td>
+									size="30" placeholder="标题" value="回复：%{#topic.title}"
+									cssClass="{required:true,minlength:1,maxlength:140,messages:{required:'请输入标题'}}" />
+							</div></td>
 					</tr>
 					<tr>
 						<td><label class="control-label"><font size="5px">内容:</font>
-						</label></td>
+						</label>
+						</td>
 						<td>
 							<div>
 								<s:textarea name="content" cssStyle="width:650px;height:200px"
-									placeholder="内容" cssClass="{required:true,minlength:1,maxlength:140,messages:{required:'请输入内容'}}"></s:textarea>
-							</div>
-						</td>
+									placeholder="内容"
+									cssClass="{required:true,minlength:1,maxlength:140,messages:{required:'请输入内容'}}"></s:textarea>
+							</div></td>
 					</tr>
 					<tr>
 						<td colspan="2">
@@ -78,8 +85,7 @@
 								<button type="submit" class="btn btn-primary btn-lg">保存</button>
 								<a href="javascript:history.go(-1);"
 									class="btn btn-warning btn-lg">返回 </a>
-							</div>
-						</td>
+							</div></td>
 					</tr>
 				</table>
 			</div>

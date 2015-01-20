@@ -23,4 +23,12 @@ public interface UserService extends DaoSupport<User> {
 	 * @return
 	 */
 	List<User> contactList();
+
+	/**
+	 * 验证登录名是否存在
+	 * 
+	 * @param loginName
+	 * @return
+	 */
+	boolean checkLoginName(String loginName);
 }
