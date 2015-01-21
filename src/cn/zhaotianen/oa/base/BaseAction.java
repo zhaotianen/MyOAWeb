@@ -21,9 +21,7 @@ import com.opensymphony.xwork2.ModelDriven;
 
 public abstract class BaseAction<T> extends ActionSupport implements
 		ModelDriven<T> {
-
 	// =============== ModelDriven的支持 ==================
-
 	protected T model;
 
 	public BaseAction() {

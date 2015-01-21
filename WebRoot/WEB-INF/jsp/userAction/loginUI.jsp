@@ -26,12 +26,12 @@ label.error {
 			<table>
 				<tr>
 					<td colspan="2">
-						<!-- 显示错误 --> <font color="red"><s:fielderror /> </font></td>
+						<!-- 显示错误 --> <font color="red"><s:fielderror /> </font>
+					</td>
 				</tr>
 				<tr>
 					<td><label class="control-label"><span
-							class="icon-user"></span>用户名:</label>
-					</td>
+							class="icon-user"></span>用户名:</label></td>
 					<td><s:textfield name="loginName" size="30" placeholder="登录名"
 							cssStyle="height:30px"
 							cssClass="{required:true,minlength:3,messages:{required:'用户名不为空'}}" />
@@ -39,7 +39,8 @@ label.error {
 				</tr>
 				<tr>
 					<td><label class="control-label"><span
-							class="icon-lock"></span>密码:</label></td>
+							class="icon-lock"></span>密码:</label>
+					</td>
 					<td><s:password name="password" size="30" showPassword="true"
 							placeholder="密码" cssStyle="height:30px"
 							cssClass="{required:true,minlength:4,messages:{required:'密码不为空'}}" />
@@ -51,8 +52,7 @@ label.error {
 						</button>
 						<button type="reset" class="btn btn-warning ">
 							<span class="icon-remove"></span> 重置
-						</button>
-					</td>
+						</button></td>
 				</tr>
 			</table>
 		</s:form>
