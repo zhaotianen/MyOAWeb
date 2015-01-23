@@ -8,6 +8,32 @@
 		$("#myForm").validate();
 	});
 </script>
+
+<script type="text/javascript">
+	/**
+	 * 定义用户名校验方法
+	 */
+	/**
+	 * 1.获取文本框的内容 
+	 * 2.将获取的内容发送到servlet 
+	 * 3.接收服务器返回的数据 
+	 * 4.将服务器返回的数据动态显示在页面上
+	 */
+
+	function verify() {
+
+		// document.getElementById("loginName"); dom的方式
+		// jquery方式
+		var loginName = $("#loginName").val();
+		$.get("user_check.action?loginName=" + loginName, null, callback);
+	};
+	/**
+	 * 回调函数
+	 */
+	function callback(data) {
+		$("#msg").html(data);
+	};
+</script>
 <style type="text/css">
 label.error {
 	margin-left: 10px;
@@ -42,7 +68,9 @@ label.error {
 					<td><s:textfield name="loginName" size="30" placeholder="登录名"
 							id="loginName" cssStyle="height:30px"
 							disabled="%{id==null?'false':'true'}"
-							cssClass="{required:true,minlength:3,maxlength:20,messages:{required:'请输入合法登录名'}}" />
+							cssClass="{required:true,minlength:3,maxlength:20,messages:{required:'请输入合法登录名'}}"
+							onchange="verify()" /><font color="red"><span id="msg"></span>
+					</font>
 					</td>
 				</tr>
 				<tr>

@@ -1,9 +1,14 @@
 package cn.zhaotianen.oa.view.action;
 
+import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -176,6 +181,31 @@ public class UserAction extends BaseAction<User> {
 	public String logout() throws Exception {
 		ActionContext.getContext().getSession().remove("user");
 		return "logout";
+	}
+
+	/**
+	 * 验证登录名是否存在
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String check() throws Exception {
+		HttpServletRequest request = ServletActionContext.getRequest();
+		// 获取原始的PrintWriter对象,以便输出响应结果,而不用跳转到某个试图
+		HttpServletResponse response = ServletActionContext.getResponse();
+		// 设置字符集
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out = response.getWriter();
+		String loginName = request.getParameter("loginName");
+		if (userService.checkLoginName(loginName)==true) {
+			out.println("该用户已存在，请重新输入！");
+		} else {
+			out.println("该用户名可以使用~");
+		}
+		out.flush();
+		out.close();
+		return null;
 	}
 
 	// ---

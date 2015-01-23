@@ -14,9 +14,7 @@
 		<param-value>classpath:applicationContext*.xml</param-value>
 	</context-param>
 
-	<!--
-		用于做初始化工作的监听器，一定要配置到Spring的ContextLoaderListener之后，因为要用到Spring的容器对象
-	-->
+	<!-- 用于做初始化工作的监听器，一定要配置到Spring的ContextLoaderListener之后，因为要用到Spring的容器对象 -->
 	<listener>
 		<listener-class>cn.zhaotianen.oa.util.InitListener</listener-class>
 	</listener>
