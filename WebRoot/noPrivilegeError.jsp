@@ -21,11 +21,11 @@
 
 
 	<!--显示表单内容-->
-	<DIV ID="MainArea">
-		<DIV CLASS="ItemBlock_Title1"></DIV>
+	<DIV>
+		<DIV></DIV>
 
-		<DIV CLASS="ItemBlockBorder" STYLE="margin-left: 15px;">
-			<DIV CLASS="ItemBlock" STYLE="text-align: center; font-size: 16px;">
+		<DIV STYLE="margin-left: 15px;">
+			<DIV STYLE="text-align: center; font-size: 16px;">
 				出错了，您没有权限访问此功能！</DIV>
 		</DIV>
 
